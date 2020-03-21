@@ -4,9 +4,9 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 ~/ServerStatsBot/servstatsbot.py
+ExecStart=/usr/bin/python3 /root/ServerStatsBot/servstatsbot.py
 User=root
-WorkingDirectory=~/ServerStatsBot/
+WorkingDirectory=/root/ServerStatsBot/
 Restart=on-failure
 
 [Install]
