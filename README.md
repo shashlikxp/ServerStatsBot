@@ -53,15 +53,14 @@ Example graph sent by bot: [Gif](http://i.imgur.com/anX7rJR.gifv)
 
 `python3 servstatsbot.py`
 
-## Running the bot as "daemon"
+## Running the bot as SystemD daemon
 
-* See included file in the repo: `servstatsbot.conf`
-    * Open it and edit the path as mentiond in the comments there
-* Place that file in `/etc/init/`
-* Start the "daemon" with: `start servstatsbot`
-    * You can start|stop|restart
-    * If bot crashes it'll be automatically restarted
-    * It will also start after reboot
+* Fix included file in the repo: `serverstatsbot.service`
+* Place that file in `/lib/systemd/system/`
+* Reload SystemD daemon service: `sudo systemctl daemon-reload`
+    * Enable autostart after reboot `sudo systemctl enable serverstatsbot.service`
+    * Start Service `sudo systemctl start serverstatsbot.service`
+    * See status Service `sudo systemctl status serverstatsbot.service`
 
 ## Setting an admin
 
